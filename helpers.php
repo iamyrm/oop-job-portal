@@ -29,3 +29,25 @@ function loadPartials($name)
       echo "Partial '{$name} is not found!'";
    }
 }
+
+// escaping function
+function e($arg)
+{
+   return htmlspecialchars($arg);
+}
+
+// Inspect values function
+function inspect($value)
+{
+   echo "<pre>";
+   var_dump($value);
+   echo "</pre>";
+}
+
+// Inspect and die
+function inspectAndDie($value)
+{
+   echo "<pre>";
+   die(var_dump($value));
+   echo "</pre>";
+}
