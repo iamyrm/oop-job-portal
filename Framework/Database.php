@@ -1,4 +1,9 @@
 <?php
+
+namespace Framework;
+
+use PDO;
+
 class Database
 {
    public $conn;
@@ -24,7 +29,7 @@ class Database
    {
       try {
          $sth = $this->conn->prepare($query);
-         
+
          // Bind name params
          foreach ($params as $param => $value) {
             $sth->bindValue(':' . $param, $value);

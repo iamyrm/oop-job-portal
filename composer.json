@@ -1,0 +1,16 @@
+{
+   "name": "iamyrm/php-job-listing",
+   "description": "Job listing application",
+   "authors": [
+      {
+         "name": "Yagyaraj Majhi",
+         "email": "majhiyagya123@gmail.com"
+      }
+   ],
+   "autoload":{
+      "psr-4":{
+         "Framework\\":"Framework/",
+         "App\\":"App/"
+      }
+   }
+}
