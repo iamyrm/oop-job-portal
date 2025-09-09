@@ -7,11 +7,12 @@ function basePath($path = '')
 }
 
 // loading views
-function loadView($name)
+function loadView($name, $data = [])
 {
    $viewPath = basePath("views/{$name}.view.php");
 
    if (file_exists($viewPath)) {
+      extract($data);
       require $viewPath;
    } else {
       echo "View '{$name} not found!'";
@@ -31,7 +32,7 @@ function loadPartials($name)
 }
 
 // escaping function
-function e($arg)
+function _e($arg)
 {
    return htmlspecialchars($arg);
 }
@@ -50,4 +51,10 @@ function inspectAndDie($value)
    echo "<pre>";
    die(var_dump($value));
    echo "</pre>";
+}
+
+// Formatting the salary
+function formatSalary($salary)
+{
+   return '$' . number_format(floatval($salary));
 }
